@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-03 12:10:57.626985",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "issue_duration",
+  "penalty_per_day",
+  "max_books_issue",
+  "email_sender",
+  "enable_reminders",
+  "block_on_overdue",
+  "library_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "issue_duration",
+   "fieldtype": "Int",
+   "label": "Default Issue Duration (Days)"
+  },
+  {
+   "fieldname": "max_books_issue",
+   "fieldtype": "Int",
+   "label": "Max Books Allowed"
+  },
+  {
+   "fieldname": "email_sender",
+   "fieldtype": "Data",
+   "label": "Email Notifications From"
+  },
+  {
+   "default": "checked",
+   "fieldname": "enable_reminders",
+   "fieldtype": "Check",
+   "label": "Enable Reminders"
+  },
+  {
+   "default": "10",
+   "fieldname": "penalty_per_day",
+   "fieldtype": "Currency",
+   "label": "Penalty Per Day"
+  },
+  {
+   "default": "Checked",
+   "fieldname": "block_on_overdue",
+   "fieldtype": "Check",
+   "label": "Block on Unpaid Fine"
+  },
+  {
+   "fieldname": "library_name",
+   "fieldtype": "Data",
+   "label": "Library Name"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-12-05 13:25:05.589748",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Library Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

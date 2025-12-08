@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "PRD-.#####",
+ "creation": "2025-11-21 14:59:36.104464",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_6do5",
+  "product_id",
+  "product_name",
+  "category",
+  "section_break_vvu3",
+  "price",
+  "stock_availability",
+  "tags",
+  "description",
+  "image"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_6do5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "product_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product ID",
+   "placeholder": "Enter Product ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Product Name",
+   "placeholder": "Enter Product Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "Men\nWomen\nBoy\nGirl",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_vvu3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Price",
+   "placeholder": "Enter Price"
+  },
+  {
+   "fieldname": "stock_availability",
+   "fieldtype": "Int",
+   "label": "Stock Availability",
+   "placeholder": "Enter Stock"
+  },
+  {
+   "fieldname": "tags",
+   "fieldtype": "Data",
+   "label": "Tags",
+   "placeholder": "Enter Tag"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Table",
+   "label": "Image",
+   "options": "Product Image"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-21 15:08:31.306463",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Product Catalogue",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

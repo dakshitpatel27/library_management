@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-21 14:50:31.650735",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_m1gj",
+  "subject_name",
+  "marks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_m1gj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "Subject name",
+   "fieldname": "subject_name",
+   "fieldtype": "Data",
+   "label": "Subject Name"
+  },
+  {
+   "description": "Marks obtained",
+   "fieldname": "marks",
+   "fieldtype": "Float",
+   "label": "Marks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-11-24 17:22:39.220456",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Student Subject",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

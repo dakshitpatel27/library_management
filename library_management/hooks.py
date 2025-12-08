@@ -144,29 +144,50 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+doc_events = {
+    "Library Member": {
+        # "after_insert": "library_management.library_management.doctype.library_member.library_member.LibraryMember.after_insert"
+    }
+}
+
 
 # Scheduled Tasks
 # ---------------
+scheduler_events = {
+    "daily": [
+        "library_management.tasks.send_due_and_overdue_reminders",
+        "library_management.tasks.update_block_status_for_members",
+        "library_management.tasks.send_admin_daily_summary",
+    ]
+}
+
+
+
 
 # scheduler_events = {
-# 	"all": [
+#     "cron":{     #Runs Every Minutes
+#         "* * * * *":[
+#             "library_management.tasks.cron"
+#         ]
+#     },
+# 	"all": [     #Runs Every 4 Minutes
 # 		"library_management.tasks.all"
 # 	],
-# 	"daily": [
+# 	"daily": [   #Runs Daily Once
 # 		"library_management.tasks.daily"
 # 	],
-# 	"hourly": [
+# 	"hourly": [  #Runs Hourly Once
 # 		"library_management.tasks.hourly"
 # 	],
-# 	"weekly": [
+# 	"weekly": [  #Runs Weekly Once Most Sunday
 # 		"library_management.tasks.weekly"
 # 	],
-# 	"monthly": [
+# 	"monthly": [ #Runs Monthly Once
 # 		"library_management.tasks.monthly"
 # 	],
 # }
 
-# Testing
+# Testing   
 # -------
 
 # before_tests = "library_management.install.before_tests"
@@ -242,3 +263,6 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures =[
+    "Library Member"
+]

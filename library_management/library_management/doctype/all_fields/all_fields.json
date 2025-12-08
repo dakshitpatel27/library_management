@@ -1,0 +1,268 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-24 14:01:51.309744",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "autocomplete",
+  "attach",
+  "attach_image",
+  "barcode",
+  "button",
+  "check",
+  "code",
+  "color",
+  "column_break_column",
+  "currency",
+  "date",
+  "datetime",
+  "duration",
+  "float",
+  "fold",
+  "section_break_section",
+  "geolocation",
+  "heading",
+  "html",
+  "html_editor",
+  "icon",
+  "image",
+  "int",
+  "json",
+  "long_text",
+  "markdown_editor",
+  "password",
+  "percent",
+  "phone",
+  "read_only",
+  "rating",
+  "select",
+  "signature",
+  "small_text",
+  "tab_break_tab",
+  "text",
+  "text_editor",
+  "time"
+ ],
+ "fields": [
+  {
+   "fieldname": "autocomplete",
+   "fieldtype": "Autocomplete",
+   "label": "Autocomplete"
+  },
+  {
+   "fieldname": "attach",
+   "fieldtype": "Attach",
+   "label": "Attach"
+  },
+  {
+   "fieldname": "attach_image",
+   "fieldtype": "Attach Image",
+   "label": "Attach Image"
+  },
+  {
+   "fieldname": "barcode",
+   "fieldtype": "Barcode",
+   "label": "Barcode"
+  },
+  {
+   "fieldname": "button",
+   "fieldtype": "Button",
+   "label": "Button"
+  },
+  {
+   "default": "0",
+   "fieldname": "check",
+   "fieldtype": "Check",
+   "label": "Check"
+  },
+  {
+   "fieldname": "code",
+   "fieldtype": "Code",
+   "label": "Code"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "Color"
+  },
+  {
+   "fieldname": "column_break_column",
+   "fieldtype": "Column Break",
+   "label": "Column Break"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Currency",
+   "label": "Currency"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "datetime",
+   "fieldtype": "Datetime",
+   "label": "Datetime"
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "label": "Duration"
+  },
+  {
+   "fieldname": "float",
+   "fieldtype": "Float",
+   "label": "Float"
+  },
+  {
+   "fieldname": "fold",
+   "fieldtype": "Fold",
+   "label": "Fold"
+  },
+  {
+   "fieldname": "section_break_section",
+   "fieldtype": "Section Break",
+   "label": "Section Break"
+  },
+  {
+   "fieldname": "geolocation",
+   "fieldtype": "Geolocation",
+   "label": "Geolocation"
+  },
+  {
+   "fieldname": "heading",
+   "fieldtype": "Heading",
+   "label": "Heading"
+  },
+  {
+   "fieldname": "html",
+   "fieldtype": "HTML",
+   "label": "HTML"
+  },
+  {
+   "fieldname": "html_editor",
+   "fieldtype": "HTML Editor",
+   "label": "HTML Editor"
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Icon",
+   "label": "Icon"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "int",
+   "fieldtype": "Int",
+   "label": "Int"
+  },
+  {
+   "fieldname": "json",
+   "fieldtype": "JSON",
+   "label": "JSON"
+  },
+  {
+   "fieldname": "long_text",
+   "fieldtype": "Long Text",
+   "label": "Long Text"
+  },
+  {
+   "fieldname": "markdown_editor",
+   "fieldtype": "Markdown Editor",
+   "label": "Markdown Editor"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Password"
+  },
+  {
+   "fieldname": "percent",
+   "fieldtype": "Percent",
+   "label": "Percent"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "read_only",
+   "fieldtype": "Read Only",
+   "label": "Read Only"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
+  },
+  {
+   "fieldname": "select",
+   "fieldtype": "Select",
+   "label": "Select",
+   "options": "1\n2\n3\n4\n5"
+  },
+  {
+   "fieldname": "signature",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "small_text",
+   "fieldtype": "Small Text",
+   "label": "Small Text"
+  },
+  {
+   "fieldname": "tab_break_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tab Break"
+  },
+  {
+   "fieldname": "text",
+   "fieldtype": "Text",
+   "label": "Text"
+  },
+  {
+   "fieldname": "text_editor",
+   "fieldtype": "Text Editor",
+   "label": "Text Editor"
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Time",
+   "label": "Time"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-24 14:26:08.439753",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "All Fields",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
