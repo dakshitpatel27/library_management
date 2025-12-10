@@ -1,20 +1,21 @@
-// Copyright (c) 2025, Dakshit and contributors
-// For license information, please see license.txt
-
-// frappe.ui.form.on("Library Member", {
-// 	refresh(frm) {
-
-// 	},
-// });
 frappe.ui.form.on("Library Member", {
     refresh(frm) {
-        if (frm.doc.is_blocked) {
-            frm.dashboard.set_headline_alert(
-                "🚫 This Member is BLOCKED — Cannot Issue New Books",
-                "red"
-            );
-        } else {
-            frm.dashboard.clear_headline();
+        if (frm.doc.first_name && frm.doc.last_name) {
+            frm.set_value("full_name", frm.doc.first_name + " " + frm.doc.last_name);
+        }
+    },
+
+    first_name(frm) {
+        frm.trigger("generate_full_name");
+    },
+
+    last_name(frm) {
+        frm.trigger("generate_full_name");
+    },
+
+    generate_full_name(frm) {
+        if (frm.doc.first_name && frm.doc.last_name) {
+            frm.set_value("full_name", frm.doc.first_name + " " + frm.doc.last_name);
         }
     }
 });

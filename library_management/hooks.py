@@ -145,19 +145,18 @@ app_license = "mit"
 # 	}
 # }
 doc_events = {
-    "Library Member": {
-        # "after_insert": "library_management.library_management.doctype.library_member.library_member.LibraryMember.after_insert"
+    "Student": {
+        "validate": "library_management.events.student_validate"
     }
 }
 
 
-# Scheduled Tasks
-# ---------------
+
 scheduler_events = {
     "daily": [
         "library_management.tasks.send_due_and_overdue_reminders",
         "library_management.tasks.update_block_status_for_members",
-        "library_management.tasks.send_admin_daily_summary",
+    
     ]
 }
 

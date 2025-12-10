@@ -14,14 +14,14 @@ class LibraryMember(Document):
 
         email = getattr(self, "email", None)
 
-        # Welcome Message
+        
         message = f"""
                     🎉 Welcome {self.first_name}!
                     Your Library Membership has been created successfully.
                     Member ID: {self.member_id}
                    """
+        
 
-        # Send Welcome Email
         if email:
             frappe.sendmail(
                 recipients=[email],
@@ -30,7 +30,7 @@ class LibraryMember(Document):
                 now=True,
             )
 
-        # ---------- Generate QR Code ----------
+
         try:
             qr_data = f"Member ID: {self.name}\nName: {self.first_name} {self.last_name}"
             qr_img = qrcode.make(qr_data)
@@ -38,7 +38,7 @@ class LibraryMember(Document):
             qr_img.save(buffer, format="PNG")
             qr_bytes = buffer.getvalue()
 
-            # Save QR as File to system
+
             qr_file = frappe.get_doc({
                 "doctype": "File",
                 "file_name": f"{self.name}_qr.png",
@@ -48,15 +48,15 @@ class LibraryMember(Document):
                 "attached_to_name": self.name
             }).insert(ignore_permissions=True)
 
-            # Save QR URL in member doc
+
             self.qr_code = qr_file.file_url
             self.save()
 
         except Exception as e:
             frappe.log_error(f"QR Code Error: {e}", "QR Generation Failed")
             return
-
-        # ---------- Generate PDF QR Card ----------
+        
+        
         try:
             html = frappe.render_template(
                 "library_management/library_management/doctype/library_member/qr_template.html",

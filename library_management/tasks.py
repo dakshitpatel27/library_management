@@ -65,31 +65,3 @@ def update_block_status_for_members():
 
     frappe.db.commit()
     frappe.logger().info("Block status updated for library members")
-
-
-# ---------------- DAILY EMAIL SUMMARY TO ADMIN ----------------
-def send_admin_daily_summary():
-    settings = _settings()
-    if not settings or not settings.admin_email:
-        return
-
-    total_members = frappe.db.count("Library Member")
-    total_books = frappe.db.count("Library Book")
-    issued_today = frappe.db.count("Library Transaction", {"transaction_type": "Issue", "posting_date": nowdate()})
-    returns_today = frappe.db.count("Library Transaction", {"transaction_type": "Return", "posting_date": nowdate()})
-
-    msg = f"""
-    📊 <b>Library Daily Summary</b><br><br>
-    • Total Members: {total_members}<br>
-    • Total Books: {total_books}<br>
-    • Books Issued Today: {issued_today}<br>
-    • Books Returned Today: {returns_today}<br>
-    """
-
-    frappe.sendmail(
-        recipients=[settings.admin_email],
-        subject="Daily Library Summary",
-        message=msg
-    )
-
-    frappe.logger().info("Daily summary emailed to admin")
