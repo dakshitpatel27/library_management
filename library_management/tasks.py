@@ -14,7 +14,7 @@ def update_block_status_for_members():
         return
 
     members = frappe.get_all("Library Member", pluck="name")
-
+    
     for m in members:
         unpaid_penalty = frappe.db.sql(
             """
