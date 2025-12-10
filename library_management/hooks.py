@@ -152,13 +152,13 @@ doc_events = {
 
 
 
-scheduler_events = {
-    "daily": [
-        "library_management.tasks.send_due_and_overdue_reminders",
-        "library_management.tasks.update_block_status_for_members",
+# scheduler_events = {
+#     "daily": [
+#         "library_management.tasks.send_due_and_overdue_reminders",
+#         "library_management.tasks.update_block_status_for_members",
     
-    ]
-}
+#     ]
+# }
 
 
 
