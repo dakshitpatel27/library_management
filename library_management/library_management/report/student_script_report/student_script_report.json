@@ -1,0 +1,29 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2025-12-12 12:31:03.019142",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2025-12-12 12:50:54.571231",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Student Script Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Student",
+ "report_name": "Student Script Report",
+ "report_script": "def execute(filters=None):\r\n    columns = [\r\n        {\"label\": \"Student Name\", \"fieldname\": \"student_name\", \"fieldtype\": \"Data\"},\r\n        {\"label\": \"Subject\", \"fieldname\": \"subject_name\", \"fieldtype\": \"Data\"},\r\n        {\"label\": \"Marks\", \"fieldname\": \"marks\", \"fieldtype\": \"Float\"},\r\n    ]\r\n\r\n    data = []\r\n\r\n    students = frappe.get_all(\"Student\", fields=[\"name\", \"name1\"])\r\n    student_map = {s[\"name\"]: s[\"name1\"] for s in students}\r\n\r\n    subjects = frappe.get_all(\"Student Subject\", fields=[\"parent\", \"subject_name\", \"marks\"])\r\n\r\n    for row in subjects:\r\n        data.append({\r\n            \"student_name\": student_map.get(row[\"parent\"]),\r\n            \"subject_name\": row[\"subject_name\"],\r\n            \"marks\": row[\"marks\"]\r\n        })\r\n\r\n    return columns, data\r\n",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

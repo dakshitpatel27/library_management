@@ -1,45 +1,18 @@
-# apps/library_management/library_management/events.py
 import frappe
 
 def student_validate(doc, method=None):
-    """
-    Calculate total marks, percentage and set status.
-    - If child row has `max_marks` use it.
-    - Otherwise assume default_max_per_subject (100).
-    """
-    default_max_per_subject = 100
-
-    total_obtained = 0
-    max_total = 0
-
-    # `doc.subjects` is a list of child Document objects
+    obtained = 0
     for row in doc.get("subjects") or []:
-        # safe access for marks (0 if missing or falsy)
         try:
             marks = float(row.get("marks") or 0)
         except Exception:
-            # fallback if row.marks is not convertible
-            marks = 0.0
-
-        # prefer explicit field; fallback to default
-        # use getattr row.get() style for child row Document
-        max_marks = None
-        if hasattr(row, "max_marks"):
-            max_marks = row.get("max_marks")
-        elif row.get("max_marks") is not None:
-            max_marks = row.get("max_marks")
-
-        try:
-            max_marks = float(max_marks) if max_marks is not None else default_max_per_subject
-        except Exception:
-            max_marks = default_max_per_subject
-
-        total_obtained += marks
-        max_total += max_marks
-
-    percentage = (total_obtained / max_total * 100) if max_total else 0.0
-
-    # set status based on percentage
+            marks = 0
+        obtained += marks
+    total_marks = 100
+    percentage = (obtained / total_marks) * 100 if total_marks else 0
+    doc.total_marks = total_marks
+    doc.obtained_marks = obtained
+    doc.percentage = round(percentage, 2)
     if percentage < 40:
         doc.status = "Failed"
     elif percentage >= 85:
@@ -47,7 +20,39 @@ def student_validate(doc, method=None):
     else:
         doc.status = "Pass"
 
-    # Optionally set computed fields on doc
-    doc.total_obtained = total_obtained
-    doc.max_total = max_total
+def student_before_save(doc, method=None):
+    obtained = 0
+    for row in doc.get("subjects") or []:
+        marks = float(row.get("marks") or 0)
+        obtained += marks
+    total_marks = 100
+    percentage = (obtained / total_marks) * 100 if total_marks else 0
+    doc.total_marks = total_marks
+    doc.obtained_marks = obtained
     doc.percentage = round(percentage, 2)
+    if percentage < 40:
+        doc.status = "Failed"
+    elif percentage >= 85:
+        doc.status = "Excellent"
+    else:
+        doc.status = "Pass"
+
+def customer_validate(doc, method):
+    """
+    Count customers in the same customer group and update field.
+    """
+    if doc.customer_group:
+        count = frappe.db.count("Customer", {"customer_group": doc.customer_group})
+        doc.customer_group_count = count  
+
+def on_submit(doc, event):
+    frappe.sendmail(
+        recipients=["gajiparadakshit@gmail.com"], 
+        subject=f"Student Created: {doc.student_name}",
+        message=f"""
+            A new student has been submitted.<br>
+            Name: {doc.student_name}<br>
+            Subject: {doc.subject}<br>
+            Marks: {doc.marks}
+        """
+    )

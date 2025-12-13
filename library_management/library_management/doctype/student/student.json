@@ -33,7 +33,6 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Student ID",
-   "placeholder": "Enter Student ID Here",
    "reqd": 1
   },
   {
@@ -41,29 +40,27 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Name",
-   "placeholder": "Enter Name Here",
    "reqd": 1
   },
   {
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Date Of Birth",
-   "placeholder": "Select From Calender",
-   "reqd": 1
+   "label": "Date Of Birth"
   },
   {
    "fieldname": "gender",
    "fieldtype": "Select",
    "label": "Gender",
-   "options": "Male\nFemale\nOther",
+   "options": "\nMale\nFemale\nOther",
    "placeholder": "Select"
   },
   {
    "fieldname": "grade",
    "fieldtype": "Select",
    "label": "Grade",
-   "options": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+   "options": "\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10",
+   "placeholder": "Select"
   },
   {
    "fieldname": "enrollment_date",
@@ -74,7 +71,9 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Failed\nPass\nExcellent"
+   "options": "\nFailed\nPass\nExcellent",
+   "placeholder": "Select",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_gn2y",
@@ -82,14 +81,12 @@
    "label": "Calculation"
   },
   {
-   "description": "Stores calculated percentage",
    "fieldname": "percentage",
    "fieldtype": "Float",
    "label": "Percentage",
    "read_only": 1
   },
   {
-   "description": "Optional Remarks",
    "fieldname": "notes",
    "fieldtype": "Small Text",
    "label": "Notes"
@@ -121,7 +118,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-05 15:29:36.418872",
+ "modified": "2025-12-12 16:58:32.656233",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Student",

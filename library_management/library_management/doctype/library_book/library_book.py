@@ -7,7 +7,6 @@ class LibraryBook(Document):
     if not self.available_copies:
         self.available_copies = self.total_copies
 
-
    def validate(self):
     self.total_copies = int(self.total_copies or 0)
     if not self.available_copies:

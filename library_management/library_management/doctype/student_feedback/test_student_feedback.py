@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestClientSideScripting(FrappeTestCase):
+class TestStudentFeedback(FrappeTestCase):
 	pass

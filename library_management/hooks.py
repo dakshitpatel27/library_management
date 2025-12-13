@@ -146,7 +146,11 @@ app_license = "mit"
 # }
 doc_events = {
     "Student": {
-        "validate": "library_management.events.student_validate"
+        "validate": "library_management.events.student_validate",
+        "before_save": "library_management.events.student_before_save"
+    },
+    "Customer": {
+        "validate": "library_management.events.customer_validate" 
     }
 }
 
