@@ -1,0 +1,72 @@
+{
+ "_comments": "[{\"comment\": \"<div class=\\\"ql-editor read-mode\\\"><p><br></p></div>\", \"by\": \"dakshit.gajipara2707@gmail.com\", \"name\": \"igsj46p32s\"}]",
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-17 12:14:58.427315",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "attach_image",
+  "scan_barcode",
+  "fold",
+  "section_break_section",
+  "name1"
+ ],
+ "fields": [
+  {
+   "fieldname": "attach_image",
+   "fieldtype": "Attach Image",
+   "label": "Attach Image"
+  },
+  {
+   "fieldname": "fold",
+   "fieldtype": "Fold",
+   "label": "Fold"
+  },
+  {
+   "fieldname": "section_break_section",
+   "fieldtype": "Section Break",
+   "label": "Section Break"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "scan_barcode",
+   "fieldtype": "Data",
+   "label": "Scan Barcode",
+   "options": "Barcode"
+  }
+ ],
+ "grid_page_length": 50,
+ "image_field": "attach_image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-18 11:07:49.269155",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Properties",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "name1"
+}

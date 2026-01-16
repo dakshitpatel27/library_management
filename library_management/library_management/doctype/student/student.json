@@ -45,14 +45,13 @@
   {
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
-   "in_list_view": 1,
    "label": "Date Of Birth"
   },
   {
    "fieldname": "gender",
    "fieldtype": "Select",
    "label": "Gender",
-   "options": "\nMale\nFemale\nOther",
+   "options": "Male\nFemale\nOther",
    "placeholder": "Select"
   },
   {
@@ -70,8 +69,9 @@
   {
    "fieldname": "status",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Status",
-   "options": "\nFailed\nPass\nExcellent",
+   "options": "Failed\nPass\nExcellent",
    "placeholder": "Select",
    "read_only": 1
   },
@@ -81,6 +81,7 @@
    "label": "Calculation"
   },
   {
+   "depends_on": "eval:doc.status != \"Failed\"",
    "fieldname": "percentage",
    "fieldtype": "Float",
    "label": "Percentage",
@@ -118,7 +119,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-12 16:58:32.656233",
+ "modified": "2026-01-16 11:34:26.805060",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Student",

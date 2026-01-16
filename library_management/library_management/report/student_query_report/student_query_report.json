@@ -1,0 +1,89 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [
+  {
+   "fieldname": "student_id",
+   "fieldtype": "Data",
+   "label": "Student ID",
+   "width": 0
+  },
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "label": "Student Name",
+   "width": 0
+  },
+  {
+   "fieldname": "subject_name",
+   "fieldtype": "Data",
+   "label": "Subject Name",
+   "width": 0
+  },
+  {
+   "fieldname": "marks",
+   "fieldtype": "Float",
+   "label": "Marks",
+   "width": 0
+  },
+  {
+   "fieldname": "total_marks",
+   "fieldtype": "Float",
+   "label": "Total Marks",
+   "width": 0
+  },
+  {
+   "fieldname": "obtained_marks",
+   "fieldtype": "Float",
+   "label": "Obtained Marks",
+   "width": 0
+  },
+  {
+   "fieldname": "percentage",
+   "fieldtype": "Float",
+   "label": "Percentage",
+   "width": 0
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "width": 0
+  }
+ ],
+ "creation": "2025-12-12 10:57:25.623820",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "default": "",
+   "fieldname": "student",
+   "fieldtype": "Link",
+   "label": "Student",
+   "mandatory": 1,
+   "options": "Student",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2026-01-12 14:44:47.200352",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Student Query Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    s.student_id AS \"Student ID\",\r\n    s.name1 AS \"Student Name\",\r\n    ss.subject_name AS \"Subject Name\",\r\n    ss.marks AS \"Marks\",\r\n\r\n    s.total_marks AS \"Total Marks\",\r\n\r\n    (\r\n        SELECT IFNULL(SUM(ss2.marks), 0)\r\n        FROM `tabStudent Subject` ss2\r\n        WHERE ss2.parent = s.name\r\n    ) AS \"Obtained Marks\",\r\n\r\n    s.percentage AS \"Percentage\",\r\n    s.status AS \"Status\"\r\n\r\nFROM `tabStudent` s\r\nLEFT JOIN `tabStudent Subject` ss\r\n    ON ss.parent = s.name\r\n\r\nWHERE s.docstatus < 2\r\nAND s.name = %(student)s\r\n\r\nORDER BY ss.subject_name;\r\n",
+ "ref_doctype": "Student",
+ "reference_report": "",
+ "report_name": "Student Query Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}

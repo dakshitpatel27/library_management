@@ -24,7 +24,6 @@
   "geolocation",
   "heading",
   "html",
-  "html_editor",
   "icon",
   "image",
   "int",
@@ -42,7 +41,8 @@
   "tab_break_tab",
   "text",
   "text_editor",
-  "time"
+  "time",
+  "html_editor"
  ],
  "fields": [
   {
@@ -241,7 +241,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-24 14:26:08.439753",
+ "modified": "2025-12-22 10:47:13.698790",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "All Fields",

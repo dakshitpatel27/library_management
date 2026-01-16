@@ -2,22 +2,23 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Client Side Scripting", {
-    // setup(frm) {
-    //     console.log("Setup event");
-    // },
+    setup(frm) {
+        console.log("Setup event");
+    },
 
     onload(frm) {
         console.log("Form Loaded");
     },
 
-    // onload_post_render(frm) {
-    //     console.log("After rendering UI");
-    // },
+    onload_post_render(frm) {
+        console.log("After rendering UI");
+    },
 
     refresh(frm) {
         if(frm.is_new())
         {
             frm.set_intro('Now You Can Create a New Client Side Scripting')
+            // frappe.msgprint("Hello")
         }
         else{
             frm.set_intro('Now You Can Edit Client Side Scripting')
@@ -50,33 +51,33 @@ frappe.ui.form.on("Client Side Scripting", {
     },
 
 
-    // before_save(frm) {
-    //     console.log("Before Save Executed");
-    // },
+    before_save(frm) {
+        console.log("Before Save Executed");
+    },
 
     after_save(frm) {
         console.log("Saved Successfully");
     },
 
-    // before_submit(frm) {
-    //     console.log("Before Submit");
-    // },
+    before_submit(frm) {
+        console.log("Before Submit");
+    },
 
     on_submit(frm) {
         console.log("Submitted");
     },
 
-    // before_cancel(frm) {
-    //     console.log("Before Cancel");
-    // },
+    before_cancel(frm) {
+        console.log("Before Cancel");
+    },
 
     after_cancel(frm) {
         console.log("Cancelled");
     },
 
-    // timeline_refresh(frm) {
-    //     console.log("Timeline refresh");
-    // },
+    timeline_refresh(frm) {
+        console.log("Timeline refresh");
+    },
 
     my_field(frm) {
         console.log("Field changed:", frm.doc.my_field);

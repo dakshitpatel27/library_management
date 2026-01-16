@@ -1,0 +1,40 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "creation": "2025-12-23 12:48:49.401470",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Library Transaction",
+ "enabled": 1,
+ "event": "Value Change",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>Your Workflow State Is {{ doc.workflow_state }}</p>\n",
+ "message_type": "HTML",
+ "modified": "2026-01-13 17:27:16.222557",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Library",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "condition": "doc.workflow_state == 'Draft'",
+   "receiver_by_role": "Library Member"
+  },
+  {
+   "condition": "doc.workflow_state == 'Pending Approval'",
+   "receiver_by_role": "Library Manager"
+  },
+  {
+   "condition": "doc.workflow_state == 'Pending Owner Approval'",
+   "receiver_by_role": "Library Owner"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "sender": "DAKSHIT GAJIPARA",
+ "sender_email": "dakshit.gajipara2707@gmail.com",
+ "subject": "Library Workflow : {{ doc.name }} {{ doc.workflow_state }}",
+ "value_changed": "workflow_state"
+}

@@ -17,6 +17,5 @@ class LibraryMember(Document):
             frappe.sendmail(
                 recipients=[email],
                 subject="Welcome to Library",
-                message=message,
-                now=True,
+                message=message
             )

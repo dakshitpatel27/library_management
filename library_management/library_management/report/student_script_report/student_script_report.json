@@ -1,8 +1,57 @@
 {
  "add_total_row": 0,
  "add_translate_data": 0,
- "columns": [],
- "creation": "2025-12-12 12:31:03.019142",
+ "columns": [
+  {
+   "fieldname": "student_id",
+   "fieldtype": "Data",
+   "label": "Student ID",
+   "width": 0
+  },
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "label": "Student Name",
+   "width": 0
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Data",
+   "label": "Grade",
+   "width": 0
+  },
+  {
+   "fieldname": "subject_name",
+   "fieldtype": "Data",
+   "label": "Subject",
+   "width": 0
+  },
+  {
+   "fieldname": "marks",
+   "fieldtype": "Float",
+   "label": "Marks",
+   "width": 0
+  },
+  {
+   "fieldname": "total_marks",
+   "fieldtype": "Float",
+   "label": "Total Marks",
+   "width": 0
+  },
+  {
+   "fieldname": "percentage",
+   "fieldtype": "Float",
+   "label": "Percentage",
+   "width": 0
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "width": 0
+  }
+ ],
+ "creation": "2025-12-12 12:52:50.048488",
  "disabled": 0,
  "docstatus": 0,
  "doctype": "Report",
@@ -10,7 +59,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2025-12-12 12:50:54.571231",
+ "modified": "2025-12-31 12:00:35.896203",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Student Script Report",
@@ -18,7 +67,7 @@
  "prepared_report": 0,
  "ref_doctype": "Student",
  "report_name": "Student Script Report",
- "report_script": "def execute(filters=None):\r\n    columns = [\r\n        {\"label\": \"Student Name\", \"fieldname\": \"student_name\", \"fieldtype\": \"Data\"},\r\n        {\"label\": \"Subject\", \"fieldname\": \"subject_name\", \"fieldtype\": \"Data\"},\r\n        {\"label\": \"Marks\", \"fieldname\": \"marks\", \"fieldtype\": \"Float\"},\r\n    ]\r\n\r\n    data = []\r\n\r\n    students = frappe.get_all(\"Student\", fields=[\"name\", \"name1\"])\r\n    student_map = {s[\"name\"]: s[\"name1\"] for s in students}\r\n\r\n    subjects = frappe.get_all(\"Student Subject\", fields=[\"parent\", \"subject_name\", \"marks\"])\r\n\r\n    for row in subjects:\r\n        data.append({\r\n            \"student_name\": student_map.get(row[\"parent\"]),\r\n            \"subject_name\": row[\"subject_name\"],\r\n            \"marks\": row[\"marks\"]\r\n        })\r\n\r\n    return columns, data\r\n",
+ "report_script": "",
  "report_type": "Script Report",
  "roles": [
   {

@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "LT-.{YYYY}.-.####",
+ "autoname": "LT-.####",
  "creation": "2025-12-03 11:59:41.012395",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -39,17 +39,20 @@
   {
    "fieldname": "issue_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Issue Date"
   },
   {
    "fieldname": "due_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Due Date"
   },
   {
    "fieldname": "return_date",
    "fieldtype": "Date",
-   "label": "Return Date"
+   "label": "Return Date",
+   "mandatory_depends_on": "eval:doc.transaction_type == \"Return\""
   },
   {
    "fieldname": "remarks",
@@ -80,9 +83,10 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-03 17:28:57.225039",
+ "modified": "2025-12-31 15:34:48.305245",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Transaction",
@@ -108,7 +112,7 @@
    "export": 1,
    "print": 1,
    "report": 1,
-   "role": "Member",
+   "role": "Library Member",
    "share": 1
   },
   {

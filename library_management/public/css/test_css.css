@@ -1,0 +1,146 @@
+/* =====================================================
+   Color Theme for Frappe Desk
+   File: test_css.css
+   ===================================================== */
+
+/* ---------- Color Palette ---------- */
+:root {
+    --primary: #2563eb;      /* Blue */
+    --secondary: #16a34a;    /* Green */
+    --warning: #f59e0b;      /* Amber */
+    --danger: #dc2626;       /* Red */
+    --info: #0ea5e9;         /* Sky Blue */
+
+    --text-main: #111827;
+    --text-muted: #6b7280;
+
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+
+    --border-color: #e5e7eb;
+}
+
+/* ---------- Page Background ---------- */
+body,
+.layout-main-section {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+}
+
+/* ---------- Section Headings ---------- */
+.section-head,
+.form-section .section-head {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ---------- Form Sections ---------- */
+.form-section {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+/* ---------- Input Fields ---------- */
+.form-control {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px var(--primary);
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: #ffffff;
+}
+
+.btn-warning {
+    background-color: var(--warning);
+    border-color: var(--warning);
+    color: #ffffff;
+}
+
+.btn-danger {
+    background-color: var(--danger);
+    border-color: var(--danger);
+}
+
+/* ---------- List View ---------- */
+.list-row {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.list-row:hover {
+    background-color: #eef2ff;
+}
+
+/* ---------- Status Colors ---------- */
+.status-indicator.green {
+    background-color: var(--secondary);
+}
+
+.status-indicator.red {
+    background-color: var(--danger);
+}
+
+.status-indicator.orange {
+    background-color: var(--warning);
+}
+
+.status-indicator.blue {
+    background-color: var(--primary);
+}
+
+/* ---------- Badges ---------- */
+.custom-badge-primary {
+    background-color: #dbeafe;
+    color: var(--primary);
+}
+
+.custom-badge-success {
+    background-color: #dcfce7;
+    color: var(--secondary);
+}
+
+.custom-badge-danger {
+    background-color: #fee2e2;
+    color: var(--danger);
+}
+
+/* ---------- Cards ---------- */
+.custom-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-success {
+    color: var(--secondary);
+}
+
+.text-danger {
+    color: var(--danger);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}

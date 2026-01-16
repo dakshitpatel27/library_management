@@ -11,10 +11,12 @@ class LibraryTransaction(Document):
         if not self.book:
             frappe.throw("Book is required.")
 
-        if self.transaction_type == "Issue" and not self.issue_date:
+        if self.transaction_type == "Issue" and not self.issue_date and not self.due_date:
             self.issue_date = nowdate()
+            frappe.throw("Due Date is mandatory for Issue transactions")
+
         if self.transaction_type == "Return" and not self.return_date:
-            self.return_date = nowdate()
+            frappe.throw("Return Date is mandatory for Return transactions")
 
         self.settings = frappe.get_single("Library Settings")
         if self.transaction_type == "Issue":
@@ -90,8 +92,7 @@ class LibraryTransaction(Document):
             frappe.sendmail(
                 recipients=[email],
                 subject="Library Transaction Update | Library Management System",
-                message=msg,
-                now=True,
+                message=msg
             )
 
     def on_update_after_submit(self):
