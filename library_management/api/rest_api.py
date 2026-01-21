@@ -60,18 +60,13 @@ def get_customers_groupwise():
     customers = frappe.get_all(
         "Customer",
         filters=filters,
-        fields=[
-            "name",
-            "customer_name",
-            "customer_group"
-        ],
+        fields=["name","customer_name","customer_group"],
         order_by="customer_group asc, customer_name asc"
     )
     grouped_data = {}
     for cust in customers:
         group = cust.customer_group
         grouped_data.setdefault(group, []).append(cust)
-
     return {
         "status": "success",
         "total_records": len(customers),
@@ -141,4 +136,22 @@ def detect_method():
 #         "name": doc.name
 #     }
 
-
+##--------------------------------------Review Task ------------------------------------
+#GET
+#http://sigzen.local:8000/api/method/library_management.api.rest_api.get_child_items
+@frappe.whitelist()
+def get_child_items():
+    invoice_name = "ACC-SINV-2025-00001"
+    items = frappe.db.get_list("Sales Invoice Item",
+        filters={
+            "parent": invoice_name,
+            "parenttype": "Sales Invoice",
+            "parentfield": "items"
+        },
+        fields=["item_code","item_name","qty","uom","rate","amount"]
+    )
+    return {
+        "invoice": invoice_name,
+        "total_items": len(items),
+        "items": items
+    }

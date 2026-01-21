@@ -22,3 +22,17 @@ frappe.listview_settings["Student"] = {
 };
 
 
+//-----------------------------Review Task------------------------------------
+
+frappe.listview_settings["Student"] = {
+    onload: function (listview) {
+        listview.page.add_inner_button(__("Button"), function () {
+            frappe.msgprint({
+                title: __("Triggered"),
+                message: __("This Is List View Button By Using Onload Method & Inner Button"),
+                indicator: "blue"
+            });
+        });
+    }
+};
+

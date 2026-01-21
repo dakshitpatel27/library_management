@@ -27,7 +27,7 @@ add_to_apps_screen = [
 # # include js, css files in header of desk.html
 
 # app_include_css = "/assets/library_management/css/test_css.css"
-# app_include_js = "/assets/library_management/js/test_js.js"
+app_include_js = "/assets/library_management/js/test_js.js"
 
 
 
@@ -188,7 +188,7 @@ scheduler_events = {
         ]
     },
 	"all": [     #Runs Every 4 Minutes
-		"library_management.tasks.all"
+		"library_management.tasks.insert_note_all"
 	],
 	"daily": [   #Runs Daily Once
 		"library_management.tasks.daily"

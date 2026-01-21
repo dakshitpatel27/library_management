@@ -7,5 +7,6 @@ frappe.listview_settings["Customer"] = {
                 indicator: "blue"
             });
         });
+        
     }
 };
